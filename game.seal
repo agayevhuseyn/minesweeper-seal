@@ -115,10 +115,8 @@ define open_mineless_field(n)
 	while true
 		n = n + 1
 		if n > ROWS * COLS - 1 or\
-		n % COLS == 0
-			stop
-
-		if grids[n].is_revealed or\
+		n % COLS == 0 or\
+		grids[n].is_revealed or\
 		grids[n].has_mine or\
 		grids[n].is_flagged
 			stop
@@ -131,10 +129,8 @@ define open_mineless_field(n)
 	while true
 		n = n - 1
 		if n < 0 or\
-		(n + 1) % COLS == 0
-			stop
-
-		if grids[n].is_revealed or\
+		(n + 1) % COLS == 0 or\
+		grids[n].is_revealed or\
 		grids[n].has_mine or\
 		grids[n].is_flagged
 			stop
@@ -146,10 +142,8 @@ define open_mineless_field(n)
 	n = init
 	while true
 		n = n + COLS
-		if n > COLS * ROWS - 1
-			stop
-
-		if grids[n].is_revealed or\
+		if n > COLS * ROWS - 1 or\
+		grids[n].is_revealed or\
 		grids[n].has_mine or\
 		grids[n].is_flagged
 			stop
@@ -161,10 +155,8 @@ define open_mineless_field(n)
 	n = init
 	while true
 		n = n - COLS
-		if n < 0
-			stop
-
-		if grids[n].is_revealed or\
+		if n < 0 or\
+		grids[n].is_revealed or\
 		grids[n].has_mine or\
 		grids[n].is_flagged
 			stop
